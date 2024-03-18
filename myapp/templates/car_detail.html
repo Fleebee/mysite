@@ -1,0 +1,72 @@
+{% extends "base.html" %} {% block content %}
+
+<div class="">
+  <h1>Car {{car.id}}</h1>
+  <br />
+  <h2>Details</h2>
+  <div class="car-detail-container">
+    <div class="car-detail-row">
+      <p class="car-detail-label car-detail-column">Brand</p>
+      <p class="car-detail-value car-detail-column">{{car.brand}}</p>
+    </div>
+
+    <div class="car-detail-row">
+      <p class="car-detail-label car-detail-column">Model</p>
+      <p class="car-detail-value car-detail-column">{{car.model_name}}</p>
+    </div>
+
+    <div class="car-detail-row">
+      <p class="car-detail-label car-detail-column">Colour</p>
+      <p class="car-detail-value car-detail-column">{{car.colour}}</p>
+    </div>
+
+    <div class="car-detail-row">
+      <p class="car-detail-label car-detail-column">Paint Code</p>
+      <p class="car-detail-value car-detail-column">
+        {{car.colour.paint_code}}
+      </p>
+    </div>
+
+    <div class="car-detail-row">
+      <p class="car-detail-label car-detail-column">Condition</p>
+      <p class="car-detail-value car-detail-column">{{car.condition}}</p>
+    </div>
+
+    <button>Update</button>
+    <a href="{% url 'confirm_delete_car' car.id %}">
+      <button type="button">Delete</button>
+    </a>
+  </div>
+
+  <h2>Previous Owners</h2>
+  {% if previous_owners %}
+  <table class="car-table">
+    <thead>
+      <th class="car-table-th">Name</th>
+      <th class="car-table-th">Owned From</th>
+      <th class="car-table-th">Owned To</th>
+      <th class="car-table-th">Actions</th>
+    </thead>
+    <tbody>
+      {% for owner in previous_owners %}
+      <tr>
+        <td>{{owner.name}}</td>
+        <td>{{owner.start_date}}</td>
+        <td>{{owner.end_date}}</td>
+        <td>
+          <button>Update</button>
+          <a href="{% url 'owner_delete' owner.id %}">
+            <button type="button">Delete</button>
+          </a>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  {% else %}
+  <p>No Previous Owners</p>
+  {% endif %}
+  <br />
+  <button>Add New Owner</button>
+</div>
+{% endblock %}

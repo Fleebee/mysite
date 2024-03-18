@@ -1,0 +1,31 @@
+{% extends "base.html" %} {% block content %}
+
+<div class="">
+  <h1>Brands</h1>
+
+  <table class="car-table">
+    <thead>
+      <th class="car-table-th">Name</th>
+      <th class="car-table-th">Total Number of cars</th>
+      <th class="car-table-th">Number of new cars</th>
+      <th class="car-table-th">Number of used cars</th>
+      
+    </thead>
+    <tbody>
+      {% for brand in brands %}
+      <tr>
+        <td class="car-table-td">{{brand.name}}</td>
+        <td class="car-table-td">{{brand.total_car_count}}</td>
+        <td class="car-table-td">{{brand.new_car_count}}</td>
+        <td class="car-table-td">{{brand.used_car_count}}</td>
+       
+      </tr>
+
+      {% endfor %}
+    </tbody>
+  </table>
+  <br>
+  <button>Add Brand</button>
+  
+</div>
+{% endblock %}

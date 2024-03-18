@@ -1,0 +1,35 @@
+{% extends "base.html" %} {% block content %}
+
+<div class="">
+  <h1>Cars</h1>
+
+  <table class="car-table">
+    <thead>
+      <th class="car-table-th">ID</th>
+      <th class="car-table-th">Model</th>
+      <th class="car-table-th">Colour</th>
+      <th class="car-table-th">Brand</th>
+      <th class="car-table-th">Condition</th>
+      <th class="car-table-th">No. Previous Owners</th>
+      <th class="car-table-th">Details</th>
+    </thead>
+    <tbody>
+      {% for car in cars %}
+      <tr>
+        <td class="car-table-td">{{car.id}}</td>
+        <td class="car-table-td">{{car.model_name}}</td>
+        <td class="car-table-td">{{car.colour}}</td>
+        <td class="car-table-td">{{car.brand}}</td>
+        <td class="car-table-td">{{car.condition}}</td>
+        <td class="car-table-td">Prev Owners</td>
+        <td class="car-table-td"><button onclick="window.location.href='{% url 'car_detail' car.id %}'">Details</button></td>
+       
+      </tr>
+
+      {% endfor %}
+    </tbody>
+  </table>
+  <br />
+  <button onclick="window.location.href='{% url 'create_car'%}'">Create Car</button>
+</div>
+{% endblock %}

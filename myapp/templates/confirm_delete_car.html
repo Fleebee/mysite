@@ -1,0 +1,49 @@
+{% extends "base.html" %} {% block content %}
+
+<h1>Delete Car</h1>
+
+<div class="">
+  <h1>Car {{car.id}}</h1>
+  <br />
+  <h2>Details</h2>
+  <div class="car-detail-container">
+    <div class="car-detail-row">
+      <p class="car-detail-label car-detail-column">Brand</p>
+      <p class="car-detail-value car-detail-column">{{car.brand}}</p>
+    </div>
+
+    <div class="car-detail-row">
+      <p class="car-detail-label car-detail-column">Model</p>
+      <p class="car-detail-value car-detail-column">{{car.model_name}}</p>
+    </div>
+
+    <div class="car-detail-row">
+      <p class="car-detail-label car-detail-column">Colour</p>
+      <p class="car-detail-value car-detail-column">{{car.colour}}</p>
+    </div>
+
+    <div class="car-detail-row">
+      <p class="car-detail-label car-detail-column">Paint Code</p>
+      <p class="car-detail-value car-detail-column">
+        {{car.colour.paint_code}}
+      </p>
+    </div>
+
+    <div class="car-detail-row">
+      <p class="car-detail-label car-detail-column">Condition</p>
+      <p class="car-detail-value car-detail-column">{{car.condition}}</p>
+    </div>
+
+    <div>
+      <h2>Are you sure you wish to delete this car?</h2>
+
+      <form action="{% url 'delete_car' car.id %}" method="post">
+        {% csrf_token %}
+        <button type="submit" style="background-color: red">Delete</button>
+      </form>
+      <button>Cancel</button>
+    </div>
+  </div>
+
+  {% endblock %}
+</div>

@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FTS Cars DB</title>
+
+    <link rel="stylesheet" href="{% static 'style.css' %}" />
+  </head>
+  <body>
+    <header>
+      <a class="nav-item" href="{% url 'home' %}">Home (Cars)</a>
+      <a class="nav-item" href="{% url 'brands' %}">Brands</a>
+      <a class="nav-item" href="{% url 'colours' %}">Colors</a>
+    </header>
+
+  
+
+    <div class="content">
+        {% block content %}
+        {% endblock %}
+    </div>
+      
+  </body>
+
+  <footer></footer>
+
+</html>

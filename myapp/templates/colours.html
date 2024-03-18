@@ -1,0 +1,26 @@
+{% extends "base.html" %} {% block content %}
+
+<div class="">
+  <h1>Colours</h1>
+
+  <table class="car-table">
+    <thead>
+      <th class="car-table-th">Name</th>
+      <th class="car-table-th">Paint Code</th>
+      
+    </thead>
+    <tbody>
+      {% for colour in colours %}
+      <tr>
+        <td class="car-table-td">{{colour.name}}</td>
+        <td class="car-table-td">{{colour.paint_code}}</td>
+        
+      </tr>
+
+      {% endfor %}
+    </tbody>
+  </table>
+  <br />
+  <button>Add Colour</button>
+</div>
+{% endblock %}

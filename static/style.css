@@ -1,0 +1,102 @@
+
+button {
+    background-color: rgb(88, 156, 198);
+    border: 2px solid rgb(71, 122, 157);
+    border-radius: 5px;
+    border-width: 2px;
+    color: white;
+    cursor: pointer;
+}
+
+body {
+   
+    
+    font-family: monospace;
+}
+
+header {
+    display: flex;
+}
+
+.nav-item {
+    margin: 10px 10px;
+}
+
+.content-container {
+    border: solid;
+    border-width: 1px;
+    border-color: black;
+    width: 80vw;
+    height:300px;
+    padding-left: 10px;
+    margin-bottom: 2px;
+}
+
+.form-field {
+    margin-top: 4px;
+}
+
+.vacancy-table {
+    width: 500px;
+    border: solid;
+    border-width: 1px;
+    margin-top: 10px;
+    border-collapse: collapse;
+}
+
+.vacancy-table-td {
+    border: solid;
+    border-width: 1px;
+    padding: 6px 6px 6px 6px;
+    
+}
+.vacancy-table-th {
+    border: solid;
+    border-width: 1px;
+    padding: 6px 6px 6px 6px;
+    background-color: rgb(229, 229, 229);
+}
+
+
+.car-table {
+    width: 500px;
+    border: solid;
+    border-width: 1px;
+    margin-top: 10px;
+    border-collapse: collapse;
+}
+
+.car-table-th {
+    border: solid;
+    border-width: 1px;
+    padding: 6px 6px 6px 6px;
+    background-color: rgb(229, 229, 229);
+}
+
+.car-table-td {
+    border: solid;
+   
+    border-width: 1px;
+    padding: 6px 6px 6px 6px;
+
+}
+
+.car-detail-container {
+    border: solid 1px;
+    display: flex;
+    flex-direction: column;
+    width: 250px;
+}
+
+.car-detail-row {
+    display: flex;
+    flex-direction: row;
+    margin: 0;  
+}
+
+.car-detail-column {
+    flex: 1;
+    padding-left: 4px;
+    
+}
+
